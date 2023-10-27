@@ -14,3 +14,16 @@ Content-Type: application/json
     "name" : "fai",
     "email" : "fai@gmail.com"
 }
+
+###
+PUT  http://localhost:3000/users/2
+Content-Type: application/json
+
+{
+    "name" : "milfa",
+    "email" : "milfa@gmail.com"
+}
+
+###
+DELETE  http://localhost:3000/users/3
+Content-Type: application/json
