@@ -1,23 +1,23 @@
 {
   "development": {
-    "username": "process.env.DB_USERNAME",
+    "username": "root",
     "password": null,
-    "database": "process.env.DB_NAME",
-    "host": "process.env.DB_HOST",
-    "dialect": "mysql"
+    "database": "db_autentification",
+    "host": "localhost",
+    "dialect" : "mysql"
   },
   "test": {
-    "username": "process.env.DB_USERNAME",
+    "username": "root",
     "password": null,
-    "database": "process.env.DB_NAME",
-    "host": "process.env.DB_HOST",
-    "dialect": "mysql"
+    "database": "db_autentification",
+    "host": "localhost",
+    "dialect" : "mysql"
   },
   "production": {
-    "username": "process.env.DB_USERNAME",
+    "username": "root",
     "password": null,
-    "database": "process.env.DB_NAME",
-    "host": "process.env.DB_HOST",
-    "dialect": "mysql"
+    "database": "db_autentification",
+    "host": "localhost",
+    "dialect" : "mysql"
   }
 }
