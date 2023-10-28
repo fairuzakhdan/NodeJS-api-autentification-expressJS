@@ -1,6 +1,7 @@
 const jwt = require('jsonwebtoken');
 const { User } = require('../models');
 
+// eslint-disable-next-line consistent-return
 const verifyToken = async (req, res, next) => {
   // Get Auth Token
   const token = req.headers.authorization;
