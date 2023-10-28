@@ -1,25 +1,28 @@
 #!/usr/bin/env node
+/* eslint-disable no-var */
 
 /**
  * Module dependencies.
  */
 
+// eslint-disable-next-line import/order
 var app = require('../app');
 var debug = require('debug')('nodejs-autentification-express:server');
 var http = require('http');
-require('dotenv').config();
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '5000');
+// eslint-disable-next-line vars-on-top, no-use-before-define
+var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
  * Create HTTP server.
  */
 
+// eslint-disable-next-line vars-on-top
 var server = http.createServer(app);
 
 /**
