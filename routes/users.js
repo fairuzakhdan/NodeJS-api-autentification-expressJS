@@ -1,22 +1,19 @@
 const express = require('express');
 
 const router = express.Router();
-// eslint-disable-next-line no-unused-vars, quotes
-const usersController = require("../controller/users/users");
+const usersController = require('../controller/users');
+const { verifyToken } = require('../middleware/verify-token');
 
 // GET
-router.get('/', usersController.getAllUsers);
+router.get('/', verifyToken, usersController.getAllUsers);
 
 // GET :id
-router.get('/:id', usersController.getUsersById);
-
-//  POST
-router.post('/', usersController.createUsers);
+router.get('/:id', verifyToken, usersController.getUsersById);
 
 // PUT :id
-router.put('/:id', usersController.updateUsersById);
+router.put('/:id', verifyToken, usersController.updateUsersById);
 
 // DELETE
-router.delete('/:id', usersController.deleteUsersById);
+router.delete('/:id', verifyToken, usersController.deleteUsersById);
 
 module.exports = router;

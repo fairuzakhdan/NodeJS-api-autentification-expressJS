@@ -1,33 +1,18 @@
-const { User } = require('../../models');
-
-const createUsers = async (req, res) => {
-  const { name, email } = req.body;
-  if (!name || !email) {
-    res.status(400).json({
-      status: 'fail',
-      message: 'Name dan Email Belum terisi',
-    });
-    return res;
-  }
-  const user = await User.create({
-    name,
-    email,
-  });
-  res.status(201).json({
-    status: 'success',
-    user,
-  });
-  return res;
-};
+const { User } = require('../models');
 
 const getAllUsers = async (req, res) => {
-  const users = await User.findAll();
+  const users = await User.findAll({
+    // exclude => menghilangkan data password ketika di get
+    attributes: { exclude: ['password'] },
+  });
   res.status(200).json(users);
 };
 
 const getUsersById = async (req, res) => {
   const { id } = req.params;
-  const users = await User.findByPk(id);
+  const users = await User.findByPk(id, {
+    attributes: { exclude: ['password'] },
+  });
   if (!users) {
     res.status(404).json({
       status: 'fail',
@@ -87,7 +72,6 @@ const deleteUsersById = async (req, res) => {
   return res;
 };
 module.exports = {
-  createUsers,
   getAllUsers,
   getUsersById,
   updateUsersById,
