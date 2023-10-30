@@ -40,7 +40,7 @@ const login = async (req, res) => {
 
   const token = jwt.sign({ data }, 'shhh', {
     // expiresIn => memberikan expire token dengan waktu 10 detik
-    expiresIn: '10s',
+    expiresIn: '1d',
   });
   res.status(200).json({
     status: 'success',
